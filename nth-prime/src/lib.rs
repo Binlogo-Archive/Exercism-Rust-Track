@@ -1,34 +1,22 @@
 use std::u32;
 pub fn nth(n: u32) -> u32 {
     // unimplemented!("What is the 0-indexed {}th prime number?", n)
-    let mut i = 0;
-    let mut candidate = 2;
-
-    while i < n {
-        candidate += 1;
-        if is_prime(candidate) {
-            i += 1;
-        }
-    }
-    candidate
+    (2..u32::MAX)
+        .filter(|num| is_prime(*num))
+        .nth(n as usize)
+        .unwrap()
 }
 
 fn is_prime(n: u32) -> bool {
-    if n < 2 {
-        return false;
-    }
-    if n % 2 == 0 {
+    if n <= 2 {
         return n == 2;
     }
-    if n % 3 == 0 {
-        return n == 3;
-    }
-    for i in 5..n {
+    for i in 2..(n / 2 + 1) {
         if n % i == 0 {
             return false;
         }
     }
-    return true;
+    true
 }
 
 #[test]
