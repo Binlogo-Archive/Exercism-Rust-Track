@@ -28,6 +28,6 @@ Exercism practice in Rust trace
 | [Leap](https://exercism.io/tracks/rust/exercises/leap/solutions/4151df17bcf340039f76e976e29a331f) | `booleans` `conditionals`                              | Given a year, report if it is a leap year.                   | [Rust](./leap)      |
 | [Raindrops](https://exercism.io/tracks/rust/exercises/raindrops/solutions/4261ea6274bd40879c136b9839c5b681) | `case or format` `mutable string`                      | Convert a number to a string, the contents of which depend on the number's factors. | [Rust](./raindrops) |
 | [Beer Song](https://exercism.io/tracks/rust/exercises/beer-song/solutions/74677aa07a8548bca8bebcb39df98caa) | `case` `loop` `string concatenation` `vector optional` | Recite the lyrics to that beloved classic, that field-trip favorite: 99 Bottles of Beer on the Wall. | [Rust](./beer-song) |
-| Nth Prime                                                    | `loops` `primes` `math`                                | Given a number n, determine what the nth prime is.           | [Rust](./nth-prime) |
+| [Nth Prime](https://exercism.io/tracks/rust/exercises/nth-prime/solutions/5bf23c3d35d14c189a933e8c6e9a5d99) | `loops` `primes` `math`                                | Given a number n, determine what the nth prime is.           | [Rust](./nth-prime) |
 
 ### 
