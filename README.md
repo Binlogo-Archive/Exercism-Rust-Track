@@ -21,6 +21,7 @@ Exercism practice in Rust trace
 | [Reverse String](https://exercism.io/tracks/rust/exercises/reverse-string/solutions/32cf4f36f765465e810dabc561173453) | `iterator`  `str`  `string` | Reverse a string                                             | [Rust](./reverse-string) |
 | [Gigasecond](https://exercism.io/tracks/rust/exercises/gigasecond/solutions/eb926376f6214aeabb708834046d3392) | `crates`                    | Given a moment, determine the moment that would be after a gigasecond has passed. |   [Rust](./gigasecond)   |
 | [Bob](https://exercism.io/tracks/rust/exercises/bob/solutions/3d87678b6f7e4496b39d3befb37e1d36) | `chars`  `string functions` | Bob is a lackadaisical teenager. In conversation, his responses are very limited. |      [Rust](./bob)       |
+| Clock                                                        | `derive` `struct` `traits`  | Implement a clock that handles times without dates.          |     [Rust](./clock)      |
 ### Extra Exercises
 
 | Title                                                        | Tags                                                   | Descrption                                                   | Code                            |
