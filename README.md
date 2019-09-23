@@ -33,5 +33,6 @@ Exercism practice in Rust trace
 | [Proverb](https://exercism.io/tracks/rust/exercises/proverb/solutions/72174c85de0648d194a03a715f7cec57) | `format` `iterator`                                    | For want of a horseshoe nail, a kingdom was lost, or so the saying goes. | [Rust](./proverb)               |
 | [Difference of Squares](https://exercism.io/tracks/rust/exercises/difference-of-squares/solutions/2948322895e94aefa128995455886f7b) | `sum` `fold` `map` `math`                              | Find the difference between the square of the sum and the sum of the squares of the first N natural numbers. | [Rust](./difference-of-squares) |
 | [Sum Of Multiples](https://exercism.io/tracks/rust/exercises/sum-of-multiples/solutions/f16ee7aa22e24d54a08c4910dd177134) | `algorithm` `borrowing` `math`                         | Given a number, find the sum of all the unique multiples of particular numbers up to but not including that number. | [Rust](./sum-of-multiples)      |
+| [Grains](https://exercism.io/tracks/rust/exercises/grains/solutions/c37110ad75014a8db55cbe8bd5620c43) | `panic`                                                | Calculate the number of grains of wheat on a chessboard given that the number on each square doubles. | [Rust](./grains)                |
 
 ### 
