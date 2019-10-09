@@ -16,12 +16,13 @@ Exercism practice in Rust trace
 
 ### Main Exercises with mentorship
 
-| Title                                                        | Tags                        | Descrption                                                   |           Code           |
-| ------------------------------------------------------------ | --------------------------- | ------------------------------------------------------------ | :----------------------: |
-| [Reverse String](https://exercism.io/tracks/rust/exercises/reverse-string/solutions/32cf4f36f765465e810dabc561173453) | `iterator`  `str`  `string` | Reverse a string                                             | [Rust](./reverse-string) |
-| [Gigasecond](https://exercism.io/tracks/rust/exercises/gigasecond/solutions/eb926376f6214aeabb708834046d3392) | `crates`                    | Given a moment, determine the moment that would be after a gigasecond has passed. |   [Rust](./gigasecond)   |
-| [Bob](https://exercism.io/tracks/rust/exercises/bob/solutions/3d87678b6f7e4496b39d3befb37e1d36) | `chars`  `string functions` | Bob is a lackadaisical teenager. In conversation, his responses are very limited. |      [Rust](./bob)       |
-| [Clock](https://exercism.io/tracks/rust/exercises/clock/solutions/8f2b3603f1e14b1db50ca9ed43ea4bae) | `derive` `struct` `traits`  | Implement a clock that handles times without dates.          |     [Rust](./clock)      |
+| Title                                                        | Tags                                          | Descrption                                                   |           Code           |
+| ------------------------------------------------------------ | --------------------------------------------- | ------------------------------------------------------------ | :----------------------: |
+| [Reverse String](https://exercism.io/tracks/rust/exercises/reverse-string/solutions/32cf4f36f765465e810dabc561173453) | `iterator`  `str`  `string`                   | Reverse a string                                             | [Rust](./reverse-string) |
+| [Gigasecond](https://exercism.io/tracks/rust/exercises/gigasecond/solutions/eb926376f6214aeabb708834046d3392) | `crates`                                      | Given a moment, determine the moment that would be after a gigasecond has passed. |   [Rust](./gigasecond)   |
+| [Bob](https://exercism.io/tracks/rust/exercises/bob/solutions/3d87678b6f7e4496b39d3befb37e1d36) | `chars`  `string functions`                   | Bob is a lackadaisical teenager. In conversation, his responses are very limited. |      [Rust](./bob)       |
+| [Clock](https://exercism.io/tracks/rust/exercises/clock/solutions/8f2b3603f1e14b1db50ca9ed43ea4bae) | `derive` `struct` `traits`                    | Implement a clock that handles times without dates.          |     [Rust](./clock)      |
+| [Atbash Cipher](https://exercism.io/tracks/rust/exercises/atbash-cipher/solutions/885d1e04bd644c56bab41e3dbc804278) | `ascii` `chars` `iterators` `primitive types` | Create an implementation of the atbash cipher, an ancient encryption system created in the Middle East. | [Rust](./atbash-cipher)  |
 ### Extra Exercises
 
 | Title                                                        | Tags                                                   | Descrption                                                   | Code                            |
