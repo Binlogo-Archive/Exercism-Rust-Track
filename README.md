@@ -38,3 +38,8 @@ Exercism practice in Rust trace
 | [Armstrong Numbers](https://exercism.io/tracks/rust/exercises/armstrong-numbers/solutions/7fc73d04797c42a09f1588095c6e6b19) | `math`                                                 | An [Armstrong number](https://en.wikipedia.org/wiki/Narcissistic_number) is a number that is the sum of its own digits each raised to the power of the number of digits. | [Rust](./armstrong-numbers)     |
 
 ### 
+
+| Title                                                        | Tags    | Description                                                  |            Code             |
+| ------------------------------------------------------------ | ------- | ------------------------------------------------------------ | :-------------------------: |
+| [Matching Brackets](https://exercism.io/tracks/rust/exercises/matching-brackets/solutions/cf8e683778f74137b0cb4f08a622ae2f) | `stack` | Given a string containing brackets `[]`, braces `{}`, parentheses `()`, or any combination thereof, verify that any and all pairs are matched and nested correctly. | [Rust](./matching-brackets) |
+
