@@ -36,10 +36,8 @@ Exercism practice in Rust trace
 | [Sum Of Multiples](https://exercism.io/tracks/rust/exercises/sum-of-multiples/solutions/f16ee7aa22e24d54a08c4910dd177134) | `algorithm` `borrowing` `math`                         | Given a number, find the sum of all the unique multiples of particular numbers up to but not including that number. | [Rust](./sum-of-multiples)      |
 | [Grains](https://exercism.io/tracks/rust/exercises/grains/solutions/c37110ad75014a8db55cbe8bd5620c43) | `panic`                                                | Calculate the number of grains of wheat on a chessboard given that the number on each square doubles. | [Rust](./grains)                |
 | [Armstrong Numbers](https://exercism.io/tracks/rust/exercises/armstrong-numbers/solutions/7fc73d04797c42a09f1588095c6e6b19) | `math`                                                 | An [Armstrong number](https://en.wikipedia.org/wiki/Narcissistic_number) is a number that is the sum of its own digits each raised to the power of the number of digits. | [Rust](./armstrong-numbers)     |
+| [Matching Brackets](https://exercism.io/tracks/rust/exercises/matching-brackets/solutions/cf8e683778f74137b0cb4f08a622ae2f) | `stack`                                                | Given a string containing brackets `[]`, braces `{}`, parentheses `()`, or any combination thereof, verify that any and all pairs are matched and nested correctly. | [Rust](./matching-brackets)     |
+| [Saddle Points](https://exercism.io/tracks/rust/exercises/saddle-points/solutions/337fd3e68a6c4f04a75eda7ce8fbeae5) | `vectors` `iterator`                                   | Detect saddle points in a matrix.                            | [Rust](./saddle-points)         |
 
 ### 
-
-| Title                                                        | Tags    | Description                                                  |            Code             |
-| ------------------------------------------------------------ | ------- | ------------------------------------------------------------ | :-------------------------: |
-| [Matching Brackets](https://exercism.io/tracks/rust/exercises/matching-brackets/solutions/cf8e683778f74137b0cb4f08a622ae2f) | `stack` | Given a string containing brackets `[]`, braces `{}`, parentheses `()`, or any combination thereof, verify that any and all pairs are matched and nested correctly. | [Rust](./matching-brackets) |
 
