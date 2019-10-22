@@ -1,4 +1,6 @@
 # Exercism-Rust-Track
+[![Progress-Badge](https://img.shields.io/badge/Progress-36%-brightgreen)](https://exercism.io/my/tracks/rust)
+
 Exercism practice in Rust trace
 
 ## About Exercism
