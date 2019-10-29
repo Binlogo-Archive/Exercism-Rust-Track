@@ -42,5 +42,7 @@ Exercism practice in Rust trace
 | [Saddle Points](https://exercism.io/tracks/rust/exercises/saddle-points/solutions/337fd3e68a6c4f04a75eda7ce8fbeae5) | `vectors` `iterator`                                   | Detect saddle points in a matrix.                            | [Rust](./saddle-points)         |
 | [Isogram](https://exercism.io/tracks/rust/exercises/isogram/solutions/e59aca55149a4fc4a2ab8b4d1c9abd2f) | `chars` `iterator` `strings` `set`                     | Determine if a word or phrase is an isogram.                 | [Rust](./isogram)               |
 
-### 
+## Copyright
+
+All materials from [Exercism Rust Trace](https://exercism.io/my/tracks/rust) are Copyright **Exercism**.
 
