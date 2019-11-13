@@ -41,6 +41,7 @@ Exercism practice in Rust trace
 | [Matching Brackets](https://exercism.io/tracks/rust/exercises/matching-brackets/solutions/cf8e683778f74137b0cb4f08a622ae2f) | `stack`                                                | Given a string containing brackets `[]`, braces `{}`, parentheses `()`, or any combination thereof, verify that any and all pairs are matched and nested correctly. | [Rust](./matching-brackets)     |
 | [Saddle Points](https://exercism.io/tracks/rust/exercises/saddle-points/solutions/337fd3e68a6c4f04a75eda7ce8fbeae5) | `vectors` `iterator`                                   | Detect saddle points in a matrix.                            | [Rust](./saddle-points)         |
 | [Isogram](https://exercism.io/tracks/rust/exercises/isogram/solutions/e59aca55149a4fc4a2ab8b4d1c9abd2f) | `chars` `iterator` `strings` `set`                     | Determine if a word or phrase is an isogram.                 | [Rust](./isogram)               |
+| [High Scores](https://exercism.io/tracks/rust/exercises/high-scores/solutions/03c3d15bb4784a65ad92b56913de7656) | `iterators` `lifetimes` `vectors`                      | Manage a game player's High Score list.                      | [Rust](./high-scores)           |
 
 ## Copyright
 
