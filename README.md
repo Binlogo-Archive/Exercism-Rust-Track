@@ -26,6 +26,7 @@ Exercism practice in Rust trace
 | [Clock](https://exercism.io/tracks/rust/exercises/clock/solutions/8f2b3603f1e14b1db50ca9ed43ea4bae) | `derive` `struct` `traits`                    | Implement a clock that handles times without dates.          |     [Rust](./clock)      |
 | [Atbash Cipher](https://exercism.io/tracks/rust/exercises/atbash-cipher/solutions/885d1e04bd644c56bab41e3dbc804278) | `ascii` `chars` `iterators` `primitive types` | Create an implementation of the atbash cipher, an ancient encryption system created in the Middle East. | [Rust](./atbash-cipher)  |
 | [Sublist](https://exercism.io/tracks/rust/exercises/sublist/solutions/cbb828f199ff453192d0396789d76d09) | `generic over type` `enums`                   | Write a function to determine if a list is a sublist of another list |    [Rust](./sublist)     |
+| [Minesweeper](https://exercism.io/my/solutions/d60a502b6e0241a5898d45f06006612f) | `board state`                                 | Add the numbers to minesweeper board                         |  [Rust](./minesweeper)   |
 ### Extra Exercises
 
 | Title                                                        | Tags                                                   | Descrption                                                   | Code                            |
