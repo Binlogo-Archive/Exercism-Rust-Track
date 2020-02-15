@@ -1,5 +1,5 @@
 # Exercism-Rust-Track
-[![Progress](https://img.shields.io/badge/Progress-36%25-brightgreen)](https://exercism.io/my/tracks/rust)
+[![Progress](https://img.shields.io/badge/Progress-57%25-brightgreen)](https://exercism.io/my/tracks/rust)
 
 Exercism practice in Rust trace
 
@@ -44,6 +44,7 @@ Exercism practice in Rust trace
 | [Saddle Points](https://exercism.io/tracks/rust/exercises/saddle-points/solutions/337fd3e68a6c4f04a75eda7ce8fbeae5) | `vectors` `iterator`                                   | Detect saddle points in a matrix.                            | [Rust](./saddle-points)         |
 | [Isogram](https://exercism.io/tracks/rust/exercises/isogram/solutions/e59aca55149a4fc4a2ab8b4d1c9abd2f) | `chars` `iterator` `strings` `set`                     | Determine if a word or phrase is an isogram.                 | [Rust](./isogram)               |
 | [High Scores](https://exercism.io/tracks/rust/exercises/high-scores/solutions/03c3d15bb4784a65ad92b56913de7656) | `iterators` `lifetimes` `vectors`                      | Manage a game player's High Score list.                      | [Rust](./high-scores)           |
+| [Say](https://exercism.io/tracks/rust/exercises/say/solutions/01122d0f87dd4485ac38f91963bb01c4) | `modulus` `strings`                                    | Given a number from 0 to 999,999,999,999, spell out that number in English. | [Rust](./say)                   |
 
 ## Copyright
 
