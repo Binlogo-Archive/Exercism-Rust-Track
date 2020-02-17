@@ -45,6 +45,7 @@ Exercism practice in Rust trace
 | [Isogram](https://exercism.io/tracks/rust/exercises/isogram/solutions/e59aca55149a4fc4a2ab8b4d1c9abd2f) | `chars` `iterator` `strings` `set`                     | Determine if a word or phrase is an isogram.                 | [Rust](./isogram)               |
 | [High Scores](https://exercism.io/tracks/rust/exercises/high-scores/solutions/03c3d15bb4784a65ad92b56913de7656) | `iterators` `lifetimes` `vectors`                      | Manage a game player's High Score list.                      | [Rust](./high-scores)           |
 | [Say](https://exercism.io/tracks/rust/exercises/say/solutions/01122d0f87dd4485ac38f91963bb01c4) | `modulus` `strings`                                    | Given a number from 0 to 999,999,999,999, spell out that number in English. | [Rust](./say)                   |
+| [Run Length Encoding](https://exercism.io/tracks/rust/exercises/run-length-encoding/solutions/c381bfd9af34426ab6dad507ea1b7513) | `strings`                                              | Implement run-length encoding and decoding.                  | [Rust](./run-length-encoding)   |
 
 ## Copyright
 
