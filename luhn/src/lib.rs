@@ -9,6 +9,5 @@ pub fn is_valid(code: &str) -> bool {
                 .map(|d| checksum + (if d > 9 { d - 9 } else { d }))
                 .map(|d| (i + 1, d))
         })
-        .map(|(len, checksum)| len > 1 && checksum % 10 == 0)
-        .unwrap_or(false)
+        .map_or(false, |(len, checksum)| len > 1 && checksum % 10 == 0)
 }
