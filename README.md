@@ -31,6 +31,7 @@ Title                                                                           
 [Sublist](https://exercism.io/tracks/rust/exercises/sublist/solutions/cbb828f199ff453192d0396789d76d09)               | `generic over type` `enums`                   | Write a function to determine if a list is a sublist of another list                                    |    [Rust](./sublist)
 [Minesweeper](https://exercism.io/my/solutions/d60a502b6e0241a5898d45f06006612f)                                      | `board state`                                 | Add the numbers to minesweeper board                                                                    |  [Rust](./minesweeper)
 [Luhn](https://exercism.io/tracks/rust/exercises/luhn/solutions/56df560fbbfc460d95e6f9a15b45e44f)                     | `higher order functions` `iterators`          | Given a number determine whether or not it is valid per the Luhn formula.                               |      [Rust](./luhn)
+[Parallel Letter Frequency](https://exercism.io/tracks/rust/exercises/parallel-letter-frequency/solutions/99756fb4e91e4d3484a698f0784afc6e) | `multi threading` | Count the frequency of letters in texts using parallel computation. | [Rust](parallel-letter-frequency) 
 
 ### Extra Exercises
 
