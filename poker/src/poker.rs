@@ -138,12 +138,21 @@ fn find_type(cards: &[Card]) -> (HandType, Vec<u8>) {
         flush = true;
     }
 
-    if cards.windows(2).all(|x| x[0].rank - x[1].rank == 1)
-        || cards[0].rank == 14
-            && cards[1].rank == 5
-            && cards[2].rank == 4
-            && cards[3].rank == 3
-            && cards[4].rank == 2
+    if cards.windows(2).all(|x| {
+        let mut x = x.into_iter();
+        if let Some(x1) = x.nth(0) {
+            if let Some(x2) = x.nth(1) {
+                return x1.rank - x2.rank == 1;
+            } else {
+                return true;
+            }
+        }
+        return false;
+    }) || cards[0].rank == 14
+        && cards[1].rank == 5
+        && cards[2].rank == 4
+        && cards[3].rank == 3
+        && cards[4].rank == 2
     {
         if cards[0].rank == 14 && cards[1].rank == 5 {
             extra.remove(0);

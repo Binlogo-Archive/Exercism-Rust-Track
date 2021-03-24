@@ -12,17 +12,18 @@ use poker::*;
 // - Rust provides the PartialOrd trait to handle the case of sortable things which do not have a total order. However, it doesn't provide a standard sort method for Vec<T> where T: PartialOrd. The standard idiom to sort a vector in this case is your_vec.sort_by(|a, b| a.partial_cmp(b).unwrap_or(Ordering::{Less|Equal|Greater}));, depending on your needs.
 // - You might consider implementing a type representing a poker hand which implements PartialOrd.
 pub fn winning_hands<'a>(hands: &[&'a str]) -> Option<Vec<&'a str>> {
-    let mut my_hands = vec![];
-    for hand in hands.into_iter() {
-        let cards = parse_hand(hand);
-        let myhand = Hand::new(cards?, hand);
-        my_hands.push(myhand);
-    }
-    my_hands.sort_by(|a, b| a.partial_cmp(b).unwrap());
+    let mut hands: Vec<Hand> = hands
+        .into_iter()
+        .filter_map(|hand| {
+            let cards = parse_hand(hand)?;
+            Some(Hand::new(cards, hand))
+        })
+        .collect();
+    hands.sort_by(|a, b| a.partial_cmp(b).unwrap());
     let mut res = vec![];
-    res.push(my_hands.pop().unwrap());
-    while !my_hands.is_empty() && res.last() == my_hands.last() {
-        res.push(my_hands.pop().unwrap());
+    res.push(hands.pop().unwrap());
+    while !hands.is_empty() && res.last() == hands.last() {
+        res.push(hands.pop().unwrap());
     }
     Some(res.into_iter().map(|x| x.display).collect())
 }
@@ -30,10 +31,6 @@ pub fn winning_hands<'a>(hands: &[&'a str]) -> Option<Vec<&'a str>> {
 fn parse_hand<'a>(hand: &'a str) -> Option<[Card; 5]> {
     let mut res = vec![];
     for card in hand.split(" ") {
-        if card.len() == 3 {
-            res.push(Card::new(10, card.chars().nth(2)?));
-            continue;
-        }
         if card.len() != 2 {
             return None;
         }
@@ -58,4 +55,12 @@ fn parse_hand<'a>(hand: &'a str) -> Option<[Card; 5]> {
     let mut arr = [Card::default(); 5];
     res.into_iter().enumerate().for_each(|x| arr[x.0] = x.1);
     Some(arr)
+}
+
+#[test]
+fn test_parse_hand() {
+    let hand = "4S 5S 7H 8D JC";
+    let res = parse_hand(hand);
+    assert!(res.is_some());
+    println!("{:?}", res);
 }
