@@ -1,22 +1,75 @@
-use std::cmp::Ordering;
 use std::collections::HashMap;
+use std::str::FromStr;
+use std::{cmp::Ordering, iter::FromIterator};
 use HandType::*;
+
+// diamonds (♦), clubs (♣), hearts (♥) and spades (♠)
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum Suit {
+    Diamonds,
+    Clubs,
+    Hearts,
+    Spades,
+}
+
+impl Suit {
+    pub fn new(val: char) -> Self {
+        match val {
+            'D' => Suit::Diamonds,
+            'C' => Suit::Clubs,
+            'H' => Suit::Hearts,
+            'S' => Suit::Spades,
+            _ => panic!("Not standard suit"),
+        }
+    }
+}
 
 #[derive(Debug, Clone, Copy)]
 pub struct Card {
     pub rank: u8,
-    pub suit: char,
+    pub suit: Suit,
 }
 
 impl Card {
     pub fn new(rank: u8, suit: char) -> Self {
+        let suit = Suit::new(suit);
         Self { rank, suit }
     }
 }
 
 impl Default for Card {
     fn default() -> Self {
-        Self { rank: 2, suit: 'H' }
+        Self::new(2, 'H')
+    }
+}
+
+impl FromStr for Card {
+    type Err = String;
+    fn from_str(s: &str) -> Result<Self, Self::Err> {
+        if s.len() > 3 {
+            return Err(format!("invalid input: {}", s));
+        }
+        if s.len() == 3 {
+            let rank = s.chars().take(2);
+            let suit = s.chars().last().unwrap();
+            if String::from_iter(rank) == "10" {
+                return Ok(Card::new(10, suit));
+            }
+        }
+        let mut chars = s.chars();
+        let rank = chars.nth(0).unwrap();
+        let suit = chars.last().unwrap();
+        if let Some(rank) = rank.to_digit(10) {
+            return Ok(Card::new(rank as u8, suit));
+        }
+        let rank: u8 = match rank {
+            'J' => 11,
+            'Q' => 12,
+            'K' => 13,
+            'A' => 14,
+            _ => panic!("invalid input"),
+        };
+        return Ok(Card::new(rank, suit));
     }
 }
 
@@ -72,6 +125,14 @@ impl<'a> Hand<'a> {
             display,
         }
     }
+
+    pub fn from_str(value: &'a str) -> Option<Self> {
+        if let Some(cards) = parse_hand(value) {
+            return Some(Hand::new(cards, value));
+        } else {
+            return None;
+        }
+    }
 }
 
 impl PartialEq for Hand<'_> {
@@ -89,11 +150,32 @@ impl PartialOrd for Hand<'_> {
     }
 }
 
-fn find_type(cards: &[Card]) -> (HandType, Vec<u8>) {
-    let mut groups = HashMap::new();
+fn parse_hand<'a>(hand: &'a str) -> Option<[Card; 5]> {
+    let elements = hand.split(" ").collect::<Vec<_>>();
+    if elements.len() != 5 || elements.iter().any(|e| e.len() > 3) {
+        return None;
+    }
+
+    let cards = elements.iter().filter_map(|e| {
+        if let Ok(card) = Card::from_str(e) {
+            Some(card)
+        } else {
+            None
+        }
+    });
+    let mut cards_arr = [Card::default(); 5];
     cards
-        .iter()
-        .for_each(|x| *groups.entry(x.rank).or_insert(0u8) += 1);
+        .enumerate()
+        .for_each(|(idx, card)| cards_arr[idx] = card);
+    Some(cards_arr)
+}
+
+fn find_type(cards: &[Card]) -> (HandType, Vec<u8>) {
+    let groups = cards.iter().fold(HashMap::new(), |groups, card| {
+        let mut groups = groups;
+        *groups.entry(card.rank).or_insert(0u8) += 1;
+        groups
+    });
     let mut v: Vec<(u8, u8)> = groups.into_iter().collect();
     v.sort_by(|b, a| a.1.cmp(&b.1));
     let mut acc: Vec<(HandType, Vec<u8>)> = vec![];
@@ -138,26 +220,24 @@ fn find_type(cards: &[Card]) -> (HandType, Vec<u8>) {
         flush = true;
     }
 
+    println!("cards: {:?}", cards);
     if cards.windows(2).all(|x| {
-        let mut x = x.into_iter();
-        if let Some(x1) = x.nth(0) {
-            if let Some(x2) = x.nth(1) {
-                return x1.rank - x2.rank == 1;
-            } else {
-                return true;
+        if let Some(x1) = x.first() {
+            if let Some(x2) = x.last() {
+                return x1.rank.checked_sub(x2.rank) == Some(1)
+                    || x2.rank.checked_sub(x1.rank) == Some(1);
             }
         }
         return false;
-    }) || cards[0].rank == 14
-        && cards[1].rank == 5
-        && cards[2].rank == 4
-        && cards[3].rank == 3
-        && cards[4].rank == 2
-    {
-        if cards[0].rank == 14 && cards[1].rank == 5 {
-            extra.remove(0);
-            extra.push(1);
-        }
+    }) {
+        straight = true;
+    }
+
+    let mut ranks: Vec<u8> = cards.iter().map(|card| card.rank).collect();
+    ranks.sort_by(|a, b| b.cmp(a));
+    if ranks[0] == 14 && ranks[1] == 5 && ranks[2] == 4 && ranks[3] == 3 && ranks[4] == 2 {
+        extra.remove(0);
+        extra.push(1);
         straight = true;
     }
 
@@ -177,4 +257,39 @@ fn find_type(cards: &[Card]) -> (HandType, Vec<u8>) {
 
     acc.sort_by(|b, a| a.0.cmp(&b.0));
     acc[0].clone()
+}
+
+#[test]
+fn test_parse_hand() {
+    let hand = "4S 5S 7H 8D JC";
+    let res = parse_hand(hand);
+    assert!(res.is_some());
+    println!("{:?}", res);
+}
+
+#[test]
+fn test_find_type() {
+    let hand = "10D JH QS KD AC";
+    let cards = parse_hand(hand).unwrap();
+    let res = find_type(&cards);
+    println!("{:?}", res);
+    assert_eq!(res.0, HandType::Straight);
+
+    let hand = "4S 5C 4C 5D 4H";
+    let cards = parse_hand(hand).unwrap();
+    let res = find_type(&cards);
+    println!("{:?}", res);
+    assert_eq!(res.0, HandType::FullHouse);
+
+    let hand = "3H 6H 7H 8H 5H";
+    let cards = parse_hand(hand).unwrap();
+    let res = find_type(&cards);
+    println!("{:?}", res);
+    assert_eq!(res.0, HandType::Flush);
+
+    let hand = "4D AH 3S 2D 5C";
+    let cards = parse_hand(hand).unwrap();
+    let res = find_type(&cards);
+    println!("{:?}", res);
+    assert_eq!(res.0, HandType::Straight);
 }
