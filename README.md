@@ -1,6 +1,6 @@
 # Exercism-Rust-Track
 
-[![Progress](https://img.shields.io/badge/Progress-85%25-brightgreen)](https://exercism.io/my/tracks/rust)
+[![Progress](https://img.shields.io/badge/Progress-85%25-brightgreen)](https://exercism.org/profiles/Binlogo)
 
 Exercism practice in Rust trace
 
@@ -17,7 +17,7 @@ Exercism practice in Rust trace
 
 ## Rust Track
 
-[Rust Track](https://exercism.io/my/tracks/rust) includes 90 exercises. 🦀
+[Rust Track](https://exercism.org/tracks/rust) includes 90 exercises. 🦀
 
 ### Main Exercises with mentorship
 
@@ -55,4 +55,4 @@ Title                                                                           
 
 ## Copyright
 
-All materials from [Exercism Rust Trace](https://exercism.io/my/tracks/rust) are Copyright **Exercism**.
+All materials from [Exercism Rust Trace](https://exercism.org/tracks/rust) are Copyright **Exercism**.
