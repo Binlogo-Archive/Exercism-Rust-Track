@@ -12,24 +12,20 @@ pub fn evaluate(inputs: &[CalculatorInput]) -> Option<i32> {
     for item in inputs {
         match item {
             CalculatorInput::Add => {
-                if let (Some(val1), Some(val2)) = (stack.pop(), stack.pop()) {
-                    stack.push(val1 + val2);
-                }
+                let (val1, val2) = (stack.pop()?, stack.pop()?);
+                stack.push(val1 + val2);
             }
             CalculatorInput::Subtract => {
-                if let (Some(val1), Some(val2)) = (stack.pop(), stack.pop()) {
-                    stack.push(val2 - val1);
-                }
+                let (val1, val2) = (stack.pop()?, stack.pop()?);
+                stack.push(val2 - val1);
             }
             CalculatorInput::Multiply => {
-                if let (Some(val1), Some(val2)) = (stack.pop(), stack.pop()) {
-                    stack.push(val1 * val2);
-                }
+                let (val1, val2) = (stack.pop()?, stack.pop()?);
+                stack.push(val1 * val2);
             }
             CalculatorInput::Divide => {
-                if let (Some(val1), Some(val2)) = (stack.pop(), stack.pop()) {
-                    stack.push(val2 / val1);
-                }
+                let (val1, val2) = (stack.pop()?, stack.pop()?);
+                stack.push(val2 / val1);
             }
             CalculatorInput::Value(val) => stack.push(*val),
         }
